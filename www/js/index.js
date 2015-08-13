@@ -13,7 +13,7 @@ var EbillApplication = {
     document.querySelector('.button').addEventListener('click', function onClick() {
       cordova.plugins.barcodeScanner.scan(
         function success(result) {
-          EbillApplication.results.unshift('<p>Result: ' + result + '</p>');
+          EbillApplication.results.unshift('<p>Result of format ' + result.format + ': ' + result.text + '</p>');
           EbillApplication.writeResults();
         },
         function failed(error) {

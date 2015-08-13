@@ -13,23 +13,28 @@ html {
   padding: 20px;
 }
 
-h1 {
-  font-size: 40px;
-  font-weight: normal;
+.app {
   text-align: center;
+}
+
+h1 {
+  font-size: 8vw;
+  font-weight: normal;
   margin-bottom: 40px;
 }
 
+p {
+  font-size: 5vw;
+}
+
 .button {
-  display: block;
+  display: inline-block;
   background-color: rgb(255, 89, 103);
   border: none;
   padding: 30px;
-  margin: 0 auto;
-  max-width: 320px;
   color: white;
   font-family: "Gt walsheim oe web", sans-serif;
-  font-size: 30px;
+  font-size: 8vw;
   cursor: pointer;
 }
 
