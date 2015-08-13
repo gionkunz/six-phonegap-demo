@@ -3,23 +3,23 @@ var EbillApplication = {
   resultsElement: document.querySelector('.results'),
 
   writeResults: function writeResults() {
-    this.resultsElement.innerHTML = '';
-    this.results.forEach(function forEachResult(result) {
-      this.resultsElement.innerHTML += result;
-    }.bind(this));
+    EbillApplication.resultsElement.innerHTML = '';
+    EbillApplication.results.forEach(function forEachResult(result) {
+      EbillApplication.resultsElement.innerHTML += result;
+    });
   },
 
   onDeviceReady: function onDeviceReady() {
     document.querySelector('.button').addEventListener('click', function onClick() {
       cordova.plugins.barcodeScanner.scan(
         function success(result) {
-          this.results.unshift('<p>Result: ' + result + '</p>');
-          this.writeResults();
-        }.bind(this),
+          EbillApplication.results.unshift('<p>Result: ' + result + '</p>');
+          EbillApplication.writeResults();
+        },
         function failed(error) {
-          this.results.unshift('<p>Error: ' + error + '</p>');
-          this.writeResults();
-        }.bind(this)
+          EbillApplication.results.unshift('<p>Error: ' + error + '</p>');
+          EbillApplication.writeResults();
+        }
       );
     }.bind(this));
   }
